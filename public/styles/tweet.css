@@ -1,6 +1,7 @@
 #tweets-container {
   position: relative;
   margin: auto;
+  border: 3px solid
 }
 
 .tweet-header{
@@ -10,6 +11,7 @@
     display: grid;
     /* background-color: #0074cc; */
     background-image: url(https://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+    margin-bottom: 20px;
 }
 
 .tweet-header .left{
@@ -44,10 +46,6 @@
   height: 100%;
   align-items:center;
   padding: 20px 0;
-}
-
-#tweets{
-  border: 3px solid
 }
 
 .new-tweet{

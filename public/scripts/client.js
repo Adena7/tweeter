@@ -4,6 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$(document).ready(function () {
+
+
 const data = [
   {
     "user": {
@@ -30,18 +33,18 @@ const data = [
 ];
 
 const createTweetElement = function(tweet) {
-  let date = new Date(tweet.created_at).toLocaleDateString();
-  let $tweet =
+  let date = timeago.format(tweet.created_at);
+  let $tweet = $(
   `<article class="tweet-header wrapper">
         <header>
-              <img class="left" id="pic" src="${tweet.user.avatar}">
+              <img class="left" id="pic" src="${tweet.user.avatars}">
               <h1 class="left">${tweet.user.name}</h1>
             <h5 class="right">${tweet.user.handle}</h5>
           </header>
-          <p class="message">${tweet.user.content}</p>
+          <p class="message">${tweet.content.text}</p>
           <footer class="tweet-footer">
             <div>
-              <p class="left" ${date}</p>
+              <p class="left"> ${date}</p>
             </div>
             <div>
               <i class="fas fa-retweet"></i>
@@ -49,19 +52,23 @@ const createTweetElement = function(tweet) {
               <i class="fas fa-flag"></i>
             </div>
           </footer>
-        </article> `;
+        </article> `)
+        console.log("testing", $tweet);
   return $tweet;
 };
 
 
 const renderTweets = function(tweets) {
     $("#tweets").empty();
+    console.log($('.tweets-container'));
     for (let tweet of tweets) {
-      $('#tweets').prepend(createTweetElement(tweet));
+      $('.tweets-container').prepend(createTweetElement(tweet));
+        console.log(tweets);
     }
     // loops through tweets
     // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+    // takes return value and appends it to the tweets container 
 }
 
 renderTweets(data);
+});
