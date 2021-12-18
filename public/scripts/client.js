@@ -19,7 +19,7 @@ $(document).ready(function () {
     });
   };
   loadTweets();
-  $('#errorMessage').hide();
+  
 
 // const data = [
 //   {
@@ -67,7 +67,7 @@ const createTweetElement = function(tweet) {
             </div>
           </footer>
         </article> `)
-        console.log("testing", $tweet);
+
   return $tweet;
 };
 
@@ -77,23 +77,25 @@ const renderTweets = function(tweets) {
     console.log($('.tweets-container'));
     for (let tweet of tweets) {
       $('.tweets-container').prepend(createTweetElement(tweet));
-        console.log(tweets);
     }
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container 
 }
 
-renderTweets(data);
 
-const $newTweet = $('#submit-tweet');
+
+const $newTweet = $('#tweet-form');
   $newTweet.on('submit', function(event) {
     event.preventDefault();
-    const tweet = $("#tweet-text").val().trim().length;
+    const tweet = $("#tweet-text").val().length;
+    console.log(tweet);
     if (!tweet) {
+      $('#errorMessage').show();
       $('#errorMessage').text("Tweet cannot be empty!");
     };
     if (tweet > 140) {
+      $('#errorMessage').show();
       $('#errorMessage').text("Tweet can't be longer than 140 characters!");
     } else {
       const val = $(this).serialize();
