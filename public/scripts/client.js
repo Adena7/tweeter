@@ -71,4 +71,5 @@ const renderTweets = function(tweets) {
 }
 
 renderTweets(data);
+
 });
