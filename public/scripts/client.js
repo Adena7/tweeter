@@ -72,4 +72,9 @@ const renderTweets = function(tweets) {
 
 renderTweets(data);
 
+const $newTweet = $('#submit-tweet');
+  $newTweet.on('submit', function(event) {
+    event.preventDefault();
+  });
+
 });
