@@ -11,8 +11,8 @@ $(document).ready(function () {
       url: '/tweets',
       
     }).then((response) => {
-      console.log("RESPONSE: ");
-      console.log(response);
+      // console.log("RESPONSE: ");
+      // console.log(response);
       renderTweets(response);
       $('#tweet-text').val("");
       $(".counter").text(140);
@@ -89,6 +89,25 @@ renderTweets(data);
 const $newTweet = $('#submit-tweet');
   $newTweet.on('submit', function(event) {
     event.preventDefault();
-  });
+    const tweet = $("#tweet-text").val().trim().length;
+    if (!tweet) {
+      $('#errorMessage').text("Tweet cannot be empty!");
+    };
+    if (tweet > 140) {
+      $('#errorMessage').text("Tweet can't be longer than 140 characters!");
+    } else {
+      const val = $(this).serialize();
+      $.ajax("/tweets", {
+        method: "POST",
+        data: val,
+      })
+        .then(() => {
+          $('#errorMessage').hide();
+          loadTweets();
+          $("#tweet-text").val("");
+       
+        });
+    }
+  })
 
 });
