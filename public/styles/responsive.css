@@ -1,0 +1,9 @@
+@media (max-width: 1024px) and (min-width: 800px) {
+    .header {
+      display: flex;
+      align-items: stretch;
+      margin-top: 35px;
+      position: relative;
+      bottom: 20px;
+    }
+}
