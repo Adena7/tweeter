@@ -1,12 +1,14 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
-
-This repository is the starter code for the project.
+Tweeter is a simple, single-page Twitter clone.Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
 ## Final Product (Screenshots)
 
+!["Tweeter-main"](https://github.com/Adena7/tweeter/blob/master/docs/Tweeter-main.png?raw=true)
 
+!["Tweets-hover"](https://github.com/Adena7/tweeter/blob/master/docs/Tweets-hover.png?raw=true)
+
+!["Responsive-layout"](https://github.com/Adena7/tweeter/blob/master/docs/Responsive-layout.png%20.png?raw=true)
 
 
 
