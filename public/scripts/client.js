@@ -11,13 +11,10 @@ $(document).ready(function () {
       url: '/tweets',
       
     }).then((response) => {
-      // console.log("RESPONSE: ");
-      // console.log(response);
       renderTweets(response);
       $('#tweet-text').val("");
       $(".counter").text(140);
-    });
-    
+    }); 
   };
 loadTweets();
 
@@ -59,7 +56,6 @@ const renderTweets = function(tweets) {
       $('.tweets-container').prepend(createTweetElement(tweet));
     }
 }
-
 
 
 const $newTweet = $('#tweet-form');
